@@ -7,6 +7,9 @@ GEM
       activemodel (= 5.0.1)
       activesupport (= 5.0.1)
       arel (~> 7.0)
+    activerecord-sqlserver-adapter (5.0.5)
+      activerecord (~> 5.0.0)
+      tiny_tds
     activesupport (5.0.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
@@ -17,6 +20,8 @@ GEM
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.1)
+    json (2.0.3)
+    mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_xml (0.6.0)
     rack (1.6.5)
@@ -28,8 +33,11 @@ GEM
       rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    sinatra-cross_origin (0.4.0)
     thread_safe (0.3.6)
     tilt (2.0.6)
+    tiny_tds (1.1.0-x86-mingw32)
+      mini_portile2 (~> 2.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
 
@@ -38,10 +46,14 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  activerecord-sqlserver-adapter
   httparty
+  json
   minitest
   rack-test
   sinatra
+  sinatra-cross_origin
+  tiny_tds
 
 BUNDLED WITH
    1.14.3
