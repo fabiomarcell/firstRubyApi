@@ -14,5 +14,5 @@ before do
 end
 
 get '/' do
-  print "test"
+  [{v1: "Foo"},{v1: "Bar"}].to_json
 end
