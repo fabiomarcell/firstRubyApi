@@ -14,7 +14,7 @@ before do
 end
 
 get '/' do
-  Tarefa.select(:tarefaNome).to_json
+  #Tarefa.select(:tarefaNome).to_json
 end
 
 post '/upload' do
