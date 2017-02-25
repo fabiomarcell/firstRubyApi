@@ -9,8 +9,10 @@ gem 'rack-test' #tests
 gem 'minitest' #tests - TDD - Unity Test
 gem 'httparty' #app do http request
 
-gem 'activerecord'
+gem 'activerecord' #necessária -v 4.2.1
+#activerecord -v 4.2.1
 gem 'activerecord-sqlserver-adapter'#database adapter
+#activerecord-sqlserver-adapter -v 4.2.15
 
 gem 'tiny_tds'
 

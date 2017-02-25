@@ -1,7 +1,10 @@
 require 'rubygems'
 require 'sinatra'
-require 'httparty'
+#require 'httparty'
 require 'active_record'
+require 'activerecord-sqlserver-adapter'
+require 'odbc'
+require 'logger'
 
 require 'json'
 
@@ -14,7 +17,8 @@ before do
 end
 
 get '/' do
-  #Tarefa.select(:tarefaNome).to_json
+  tarefa = Tarefa.all
+  tarefa.to_json
 end
 
 post '/upload' do
@@ -24,18 +28,23 @@ post '/upload' do
     'Yeaaup'
 end
 
-#ActiveRecord::Base.establish_connection(
-#  :adapter => "sqlserver",
-#  :host => "checklistrb.database.windows.net",
-#  #:host => "tcp:checklistrb.database.windows.net",
-#  :username => "sa123",
-#  :password => "2684Fbi6",
-#  :database => "checklist")
 
-#class Tarefa < ActiveRecord::Base
-#   self.table_name = "tblTarefa"
-#end
+  ActiveRecord::Base.establish_connection(
+      :adapter => 'sqlserver',
+      :mode => 'odbc',
+      :dsn => 'checklistrb.database.windows.net',
+      :username => 'sa123',
+      :password => '2684Fbi6'
+  )
 
+#
+class Tarefa < ActiveRecord::Base
+   self.table_name = "tblTarefa"
+end
+
+tarefa = Tarefa.all
+
+#########INSERT###########
 #account = Tarefa.new
 #account.tarefaNome = "AAA"
 #account.save
