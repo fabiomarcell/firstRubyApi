@@ -17,18 +17,25 @@ get '/' do
   Tarefa.select(:tarefaNome).to_json
 end
 
-ActiveRecord::Base.establish_connection(
-  :adapter => "sqlserver",
-  :host => "checklistrb.database.windows.net",
-  #:host => "tcp:checklistrb.database.windows.net",
-  :username => "sa123",
-  :password => "2684Fbi6",
-  :database => "checklist")
-
-class Tarefa < ActiveRecord::Base
-   self.table_name = "tblTarefa"
+post '/upload' do
+    tempfile = params[:file][:tempfile]
+    filename = params[:file][:filename]
+    cp(tempfile.path, "public/uploads/#{filename}")
+    'Yeaaup'
 end
 
-account = Tarefa.new
-account.tarefaNome = "AAA"
-account.save
+#ActiveRecord::Base.establish_connection(
+#  :adapter => "sqlserver",
+#  :host => "checklistrb.database.windows.net",
+#  #:host => "tcp:checklistrb.database.windows.net",
+#  :username => "sa123",
+#  :password => "2684Fbi6",
+#  :database => "checklist")
+
+#class Tarefa < ActiveRecord::Base
+#   self.table_name = "tblTarefa"
+#end
+
+#account = Tarefa.new
+#account.tarefaNome = "AAA"
+#account.save
