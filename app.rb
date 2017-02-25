@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'httparty'
 require 'active_record'
-require 'activerecord-sqlserver-adapter'
+
 require 'json'
 
 
