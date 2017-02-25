@@ -19,7 +19,7 @@ end
 
 ActiveRecord::Base.establish_connection(
   :adapter => "sqlserver",
-  :host => "tcp:checklistrb.database.windows.net",
+  :host => "checklistrb.database.windows.net",
   :username => "sa123",
   :password => "2684Fbi6",
   :database => "checklist")
