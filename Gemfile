@@ -15,6 +15,7 @@ gem 'activerecord-sqlserver-adapter', '4.2.15' #SQL SERVER database adapter
 #activerecord-sqlserver-adapter -v 4.2.15
 
 gem 'tiny_tds'
-gem 'ruby-odbc'
+#gem 'ruby-odbc'
+#gem 'odbc'
 
 gem 'json'
