@@ -27,3 +27,7 @@ ActiveRecord::Base.establish_connection(
 class Tarefa < ActiveRecord::Base
    self.table_name = "tblTarefa"
 end
+
+account = Tarefa.new
+account.tarefaNome = "AAA"
+account.save
