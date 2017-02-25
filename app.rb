@@ -3,7 +3,7 @@ require 'sinatra'
 
 require 'active_record'
 require 'activerecord-sqlserver-adapter'
-require 'odbc'
+
 
 require 'json'
 
