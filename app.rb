@@ -17,9 +17,25 @@ before do
 end
 
 get '/' do
-  tarefa = Tarefa.all
+  #Select *
+  #tarefa = Tarefa.all()
+
+  #select tarefaID, tarefaNome
+  #tarefa = Tarefa.select('tarefaID', 'tarefaNome')
+
+  #select tarefaID, tarefaNome from [...] where
+  #tarefa = Tarefa.select('tarefaID', 'tarefaNome').where("tarefaNome != 'AAA'")
+
+  #tarefa = Tarefa.all().where(" CONVERT(VARCHAR, tarefaDescricao) != ''")
+  #tarefa.to_json
+  "Welcome!!".to_json
+end
+
+get '/getAll' do
+  tarefa = Tarefa.all()
   tarefa.to_json
 end
+
 
 post '/upload' do
     tempfile = params[:file][:tempfile]
